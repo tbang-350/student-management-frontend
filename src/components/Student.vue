@@ -17,13 +17,26 @@
         required
       ></v-text-field>
 
-
       <v-text-field
         v-model="currentStudent.course"
         :rules="[(v) => !!v || 'Course is required']"
         label="Course"
         required
       ></v-text-field>
+
+      <!--<v-text-field
+          v-model="student.semester"
+          :rules="[(v) => !!v || 'Semester is required']"
+          label="Semester"
+          required
+        ></v-text-field>
+
+        <v-text-field
+          v-model="student.year"
+          :rules="[(v) => !!v || 'Year is required']"
+          label="Year"
+          required
+        ></v-text-field>-->
 
       <label><strong>Status:</strong></label>
       {{ currentStudent.paid ? "Paid" : "Pending" }}
@@ -90,6 +103,8 @@ export default {
         fullname: this.currentStudent.fullname,
         gender: this.currentStudent.gender,
         course: this.currentStudent.course,
+        //semester: this.currentStudent.semester,
+        //year: this.currentStudent.year,
         published: status,
       };
 

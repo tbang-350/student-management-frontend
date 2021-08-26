@@ -24,6 +24,20 @@
           label="Course"
           required
         ></v-text-field>
+
+        <v-text-field
+          v-model="student.semester"
+          :rules="[(v) => !!v || 'Semester is required']"
+          label="Semester"
+          required
+        ></v-text-field>
+
+        <v-text-field
+          v-model="student.year"
+          :rules="[(v) => !!v || 'Year is required']"
+          label="Year"
+          required
+        ></v-text-field>
       </v-form>
 
       <v-btn color="primary" class="mt-3" @click="saveStudent">Submit</v-btn>
@@ -31,9 +45,7 @@
 
     <div v-else>
       <v-card class="mx-auto">
-        <v-card-title>
-          Submitted successfully!
-        </v-card-title>
+        <v-card-title> Submitted successfully! </v-card-title>
 
         <v-card-subtitle>
           Click the button to add new Student.
@@ -59,6 +71,8 @@ export default {
         fullname: "",
         gender: "",
         course: "",
+        semester: "",
+        year: "",
         published: false,
       },
       submitted: false,
@@ -70,6 +84,8 @@ export default {
         fullname: this.student.fullname,
         gender: this.student.gender,
         course: this.student.course,
+        semester: this.student.semester,
+        year: this.student.year,
       };
 
       StudentDataService.create(data)

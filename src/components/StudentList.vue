@@ -48,6 +48,8 @@ export default {
         { text: "Student", align: "start", sortable: false, value: "fullname" },
         { text: "Gender", value: "gender", sortable: false },
         { text: "Course", value: "course", sortable: false },
+        { text: "Semester", value: "semester", sortable: false },
+        { text: "Year", value: "year", sortable: false },
         { text: "Status", value: "status", sortable: false },
         { text: "Actions", value: "actions", sortable: false },
       ],
@@ -111,6 +113,8 @@ export default {
         fullname: student.fullname.length > 30 ? student.fullname.substr(0, 30) + "..." : student.fullname,
         gender: student.gender.length > 30 ? student.gender.substr(0, 30) + "..." : student.gender,
         course: student.course.length > 30 ? student.course.substr(0, 30) + "..." : student.course,
+        semester: student.semester.length > 30 ? student.semester.substr(0, 30) + "..." : student.semester,
+        year: student.year.length > 30 ? student.year.substr(0, 30) + "..." : student.year,
         status: student.paid ? "Paid" : "Pending",
       };
     },
